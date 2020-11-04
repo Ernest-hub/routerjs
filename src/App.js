@@ -4,7 +4,7 @@ import About from './About';
 import Contact from './Contact';
 import NotFound from './NotFound';
 import FastTrackersList from './FastTrackersList';
-import * as ReactBootStrap from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { BrowserRouter as Router, Route, Link, NavLink, Switch} from "react-router-dom";
 
@@ -38,26 +38,19 @@ function App() {
 
     <Router>
       <div className="App" style={{
-              backgroundColor: '#d1ffbd',
-              textAlign: 'center',
-              padding: '14px 16px',
-              textDecoration: 'none',
-              fontSize: '17px'
+              
             }}>
-        
 
+        <h2 style={{backgroundColor: '#d9fff7'}}> Clue Mediator (www.cluemediator.com)</h2>
 
-        <h2> Clue Mediator (www.cluemediator.com)</h2>
+  <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
 
-        <div className="topper">
+        <NavLink exact classname="top-class" activeClassName="active" to="/">Home</NavLink> <hr />
+        <NavLink classname="top-class" activeClassName="active" to="/about">About</NavLink> <hr />
+        <NavLink classname="top-class" activeClassName="active" to="/contact">Contact</NavLink> <hr />
+        <NavLink classname="top-class" activeClassName="active" to="/fasttrackerslist">FastTrackersList</NavLink> <hr />
 
-        <NavLink exact activeClassName="active" to="/">Home</NavLink> <hr />
-        <NavLink activeClassName="active" to="/about">About</NavLink> <hr />
-        <NavLink activeClassName="active" to="/contact">Contact</NavLink> <hr />
-        <NavLink activeClassName="active" to="/fasttrackerslist">FastTrackersList</NavLink> <hr />
-
-
-
+</nav>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
@@ -65,15 +58,12 @@ function App() {
           <Route path="/fasttrackerslist" component={FastTrackersList} />
           <Route component={NotFound} />
 
+        </Switch>
+   
+  </div>
 
-          
-
-
-        </Switch></div>
-
-         
-      </div>
     </Router>
+
   );
 }
 
